@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--这是mybatis运行时所需的配置文件，需要与generator.xml区分，前者是必须存在的，否则就要以Java代码的方式配置-->
+
+    <!--实际上，这里原本很多的节点的配置都是不必要的了，现在都在application.properties里配置了，这里面现在只需要配置settings节点-->
+
+    <!-- 引入外部配置文件 -->
+    <properties resource="mybatisGenerator/generatorConfig.properties"/>
+
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+    </settings>
+
+    <!-- 为JAVA Bean起类别名 -->
+    <typeAliases >
+        <!-- 别名方式1，一个一个的配置 type中放置的是类的全路径，alias中放置的是类别名
+        <typeAliase type="com.cy.mybatis.beans.UserBean" alias="UserBean"/> -->
+        <!-- 别名方式2，自动扫描，将JAVA类的类名作为类的类别名 -->
+        <!--<package name="com.git.blog.dao.entity"/>-->
+    </typeAliases>
+    <!-- 配置mybatis运行环境 -->
+    <!--<environments default="cybatis">
+        <environment id="cybatis">
+            &lt;!&ndash; type="JDBC" 代表使用JDBC的提交和回滚来管理事务 &ndash;&gt;
+            <transactionManager type="JDBC" />
+
+            &lt;!&ndash; mybatis提供了3种数据源类型，分别是：POOLED,UNPOOLED,JNDI &ndash;&gt;
+            &lt;!&ndash; POOLED 表示支持JDBC数据源连接池 &ndash;&gt;
+            &lt;!&ndash; UNPOOLED 表示不支持数据源连接池 &ndash;&gt;
+            &lt;!&ndash; JNDI 表示支持外部数据源连接池 &ndash;&gt;
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>
+        </environment>
+    </environments>-->
+
+    <mappers>
+        <!-- 告知映射文件方式1，一个一个的配置
+        <mapper resource="com/cy/mybatis/mapper/UserMapper.xml"/>-->
+        <!-- 告知映射文件方式2，自动扫描包内的Mapper接口与配置文件 -->
+        <!--<package name="com/git/blog/dao/mapper"/>-->
+        <!--实际上，在这配置mapper扫描路径已经没有意义了，现在都是在application.properties中配置-->
+    </mappers>
+
+</configuration>

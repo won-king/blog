@@ -8,7 +8,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>proxy</name>
+	<name>blog</name>
 	<description>Demo project for blog</description>
 
 	<parent>

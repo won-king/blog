@@ -18,10 +18,10 @@ public class ProxyApplication {
         System.out.println("displayName->"+context.getDisplayName());
         System.out.println("bean count->"+context.getBeanDefinitionCount());
         //spring容器中所有的bean
-        String[] beans=context.getBeanDefinitionNames();
+        /*String[] beans=context.getBeanDefinitionNames();
         for(String s:beans){
             System.out.println(s);
-        }
+        }*/
         //关闭系统
         //context.close();
     }

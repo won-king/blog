@@ -7,9 +7,11 @@ import com.git.blog.dao.mapper.UpdateRecordEntityMapper;
 import com.git.blog.dao.mapper.UserEntityMapper;
 import com.git.blog.enums.ErrorEnum;
 import com.git.blog.exception.BusinessException;
+import com.git.blog.interceptor.MyBeanPostProcessor;
 import com.git.blog.util.PropertyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +23,7 @@ import java.util.Map;
  * Created by wangke18 on 2018/6/12.
  */
 @Service
+@Import(MyBeanPostProcessor.class)
 public class UserService {
     //这里之所以提示"Could not autowire. No beans of 'UserEntityMapper' type found"
     //是因为IDEA强大的语法检测功能，是够强大，但是不够智能

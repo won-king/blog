@@ -24,7 +24,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
-        <mysql.connector.version>5.1.15</mysql.connector.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
         <fastjson.version>1.2.31</fastjson.version>
         <!--因为pom内置的变量没有表示资源文件地址的，所以自己定义一个-->
         <resources>${basedir}/src/main/resources</resources>
